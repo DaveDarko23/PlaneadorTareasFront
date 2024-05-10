@@ -1,5 +1,6 @@
 import './App.css'
 import LoginLibre from "./LoginLibre"
+import PracticaFetch from "./PracticaFetch"
 
 function App() {
 
@@ -7,6 +8,8 @@ function App() {
   return (
     <>
       <LoginLibre />
+      <hr />
+      <PracticaFetch />
       <hr />
     </>
   )
