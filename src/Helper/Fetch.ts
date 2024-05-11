@@ -15,8 +15,8 @@ const getData = async <T>(
   info: any,
   method: string
 ): Promise<FetchResponse<T>> => {
-  const baseUrl = "http://localhost:3010/api/v1"; // Establece la URL base
-  const url = baseUrl + relativeUrl; // Construye la URL completa
+  const baseUrl = "http://localhost:3010/api/v1";
+  const url = baseUrl + relativeUrl;
 
   let data: T | undefined,
     isPending = true,
@@ -25,6 +25,9 @@ const getData = async <T>(
   try {
     const res = await fetch(url, {
       method,
+
+      body: method === "post" ? info : null,
+
       mode: "cors",
     });
 

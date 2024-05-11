@@ -1,4 +1,5 @@
 import './App.css'
+import LoginFetch from "./LoginFetch"
 import LoginLibre from "./LoginLibre"
 import PracticaFetch from "./PracticaFetch"
 
@@ -11,6 +12,7 @@ function App() {
       <hr />
       <PracticaFetch />
       <hr />
+      <LoginFetch />
     </>
   )
 }
