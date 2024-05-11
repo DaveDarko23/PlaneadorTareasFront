@@ -19,7 +19,7 @@ const LoginLibre = () => {
 
   return (
     <>
-      <h1>Login</h1>
+      <h2>Login</h2>
       <form onSubmit={onSubmit}>
         <input type="text" name="username" placeholder="Nombre de usuario" value={user.username} onChange={onChange} />
         <br />

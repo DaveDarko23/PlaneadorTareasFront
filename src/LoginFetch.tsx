@@ -1,6 +1,11 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 
-const LoginFetch = () => {
+interface LoginFetchProps {
+  isLogeado: (value: boolean) => void;
+}
+
+
+const LoginFetch: React.FC<LoginFetchProps> = ({ isLogeado }) => {
   const [user, setUser] = useState({ email: "", password: "" });
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -21,12 +26,14 @@ const LoginFetch = () => {
       console.log(response)
       if (response.status === 401) {
         alert("Usuario Incorrecto");
+        isLogeado(false);
         return;
       }
       const data = await response.json();
-      console.log('Token JWT:', data);
       localStorage.setItem("token", data.token)
+      localStorage.setItem("id", data.id)
       alert("Usuario Correcto")
+      isLogeado(true);
     } catch (error) {
       console.error('Error:',);
     }
